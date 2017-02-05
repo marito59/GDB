@@ -42,8 +42,9 @@ Template Name: Full Width Page Child
                                         <?php wp_link_pages('<p class="pages"><strong>'.__('Pages:', 'optimizer').'</strong> ', '</p>', 'number'); ?>
                                     </div>
                                 <!--THE CONTENT END-->
-                       
-                                <?php cma_gdb_certificats(get_the_ID()) ?>
+                       		
+                                <?php gdb_certificats(get_the_ID()); ?>
+				
                         </div>
                         <!--PAGE CONTENT END-->                       
                   </div>
