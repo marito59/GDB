@@ -87,20 +87,35 @@ $contact_options = array(
     'autre' => 'Autrement'        
 );
 
+global $pdv_options;
+$pdv_options = array(
+    'none' => ' -- choissez une valeur --',
+    'flachat' => 'Marché Flachat à Asnières - vendredi soir',
+    'vesinet' => 'Marché du Vésinet - samedi matin',
+    'houilles' => 'Gare SNCF de Houilles-Carrières - lundi soir',
+    'courbevoie' => 'Gare SNCF de Courbevoie - mercredi soir',
+    'asnieres' => 'Gare SNCF d\'Asnières - jeudi soir',
+    'amapbezon' => 'AMAP de Bezon - samedi après-midi',
+    'amapcomete' => 'AMAP Comète à Asnières - mercredi soir',
+    'livraison' => 'Livraison à votre domicile',
+    'domicile' => 'A notre adresse - Courbevoie'        
+);
+
 /**
  * Add the field to the checkout
  */
 add_action( 'woocommerce_after_order_notes', 'gdb_woo_order_notes' );
 function gdb_woo_order_notes ($checkout) {
     global $contact_options;
-    
+    global $pdv_options;
+
     //echo '<div id="livraison_field"><h2>' . __('Lieu de livraison souhaité') . '</h2>';
 
     woocommerce_form_field( 'livraison', array(
-        'type'          => 'text',
+        'type'          => 'select',
         'class'         => array('livraison-class form-row-wide'),
         'label'         => __('Lieu de livraison souhaité'),
-        'placeholder'   => __('Lieu de livraison souhaité'),
+        'options'       => $pdv_options,
         'required'      => true,
         ), $checkout->get_value( 'livraison' ));
 
@@ -147,8 +162,9 @@ add_action( 'woocommerce_admin_order_data_after_billing_address', 'gdb_woo_order
 
 function gdb_woo_order_display_admin_order_meta($order){
     global $contact_options;
+    global $pdv_options;
     
-    echo '<p><strong>'.__('Lieu de livraison').':</strong> ' . get_post_meta( $order->id, 'livraison', true ) . '</p>';
+    echo '<p><strong>'.__('Lieu de livraison').':</strong> ' . $pdv_options[get_post_meta( $order->id, 'livraison', true )] . '</p>';
     echo '<p><strong>'.__('Contact').':</strong> ' .$contact_options[get_post_meta( $order->id, 'contact', true )] . '</p>';
 }
 
