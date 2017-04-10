@@ -22,14 +22,16 @@
     font-size: 1.2em;
 }
 
-.woocommerce .products ul, .woocommerce ul.products {
+.woocommerce .products ul,
+.woocommerce ul.products {
     clear: left;
 }
+
 .woocommerce-ordering {
     display: none;
 }
 
-ul.products > li.product > div > ul > li {
+ul.products>li.product>div>ul>li {
     list-style: disc;
     margin-left: 30px;
 }
@@ -39,7 +41,7 @@ div[itemprop=description] {
     padding-left: 5%;
 }
 
-span.category > h2 {
+span.category>h2 {
     margin-top: 12px;
     margin-bottom: 24px;
     border-top: 2px solid #993399;
@@ -56,7 +58,7 @@ p.cat_desc {
 }
 
 #topmenu {
-    clear:left;
+    clear: left;
     text-align: left;
 }
 
@@ -65,13 +67,13 @@ p.cat_desc {
 }
 
 .page_head {
-	min-height: initial; 
-	text-align: left; 
+    min-height: initial;
+    text-align: left;
 }
+
 #gdb-qui {
     color: white;
 }
-
 
 .single_post {
     padding-bottom: 0px;
@@ -81,15 +83,15 @@ p.cat_desc {
     margin-bottom: 0px;
 }
 
-.home .single_post_content > ul {
+.home .single_post_content>ul {
     margin: 0 0 0 0;
 }
 
 .gdb-post-image {
-	width: 90px;
-	float: left;
-	overflow: auto;
-	padding: 0px 20px 0px 0px;
+    width: 90px;
+    float: left;
+    overflow: auto;
+    padding: 0px 20px 0px 0px;
 }
 
 .listing-item {
@@ -110,11 +112,11 @@ p.cat_desc {
 }
 
 .lay4 .post_image {
-	width: initial;
+    width: initial;
 }
 
 .lay4 .post_content {
-	float: left;
+    float: left;
 }
 
 .recettes {
@@ -122,8 +124,4 @@ p.cat_desc {
     margin-top: -40px;
     background-color: #dddddd;
     padding: 6px;
-}
-
-li.product > h2 {
-    display: none;
 }

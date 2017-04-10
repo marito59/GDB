@@ -50,6 +50,15 @@ function my_child_theme_setup() {
 }
 add_action( 'after_setup_theme', 'my_child_theme_setup' );
 
+// CMA
+// enlève le header Description avant la description d'un produit
+
+function gdb_remove_description_heading () {
+    return "";
+}
+
+add_filter('woocommerce_product_description_heading', 'gdb_remove_description_heading' );
+// end CMA
 
 function gdb_add_category_description() {
     //CMA
